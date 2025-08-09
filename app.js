@@ -60,17 +60,12 @@ function render() {
             }
 
             <div class="actions">
-              <button id="back" class="secondary">← Back</button>
               <button id="submit">Submit</button>
             </div>
           </div>
         `;
     document.getElementById("workspace").oninput = (e) =>
       (data.workspace = e.target.value);
-    document.getElementById("back").onclick = () => {
-      step = 1;
-      render();
-    };
     document.getElementById("submit").onclick = () => {
       validate();
       if (Object.keys(errors).length) {
